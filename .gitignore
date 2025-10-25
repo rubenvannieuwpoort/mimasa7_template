@@ -1,0 +1,13 @@
+.Xil/
+build/
+output.log
+xvlog.pb
+*.str
+main.cache/
+main.hw/
+main.ip_user_files/
+main.sim/
+main.runs/
+main.srcs/
+main.xpr
+
