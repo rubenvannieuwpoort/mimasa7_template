@@ -3,3 +3,8 @@ build/
 output.log
 xvlog.pb
 *.str
+cpu.cache/
+cpu.hw/
+cpu.ip_user_files/
+cpu.sim/
+cpu.runs/

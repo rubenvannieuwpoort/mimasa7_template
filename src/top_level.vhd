@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 
 entity top_level is
 	port (
-		clk_in: in std_logic;
-		led_out: out std_logic_vector(7 downto 0)
+		clk: in std_logic;
+		led: out std_logic_vector(7 downto 0)
 	);
 end top_level;
 
@@ -26,15 +26,15 @@ architecture rtl of top_level is
 	end component;
 
 begin
-	led_out(7 downto 0) <= std_logic_vector(count);
+	led(7 downto 0) <= std_logic_vector(count);
 
-	process (clk_in)
+	process (clk)
 	begin
-		if rising_edge(clk_in) and clk_en = '1' then
+		if rising_edge(clk) and clk_en = '1' then
 			count <= count + 1;
 		end if;
 	end process;
 
-	clock_div: clock_divider generic map(div => 100000000) port map(clk_in => clk_in, clk_en_out => clk_en);
+	clock_div: clock_divider generic map(div => 100000000) port map(clk_in => clk, clk_en_out => clk_en);
 
 end rtl;
